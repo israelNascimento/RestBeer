@@ -9,11 +9,8 @@
 require_once 'bootstrap.php';
 
 
-$app->get('/', function() use($app){
 
-    return $app['twig']->render('index.twig', array());
-
-
-});
+$app->mount('/cervejas', include'cervejas.php');
+$app->mount('/estilos', include 'estilos.php');
 
 $app->run();
